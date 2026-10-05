@@ -1,0 +1,29 @@
+# Build and IDE state
+.gradle/
+**/build/
+.idea/
+*.iml
+.vscode/
+.DS_Store
+# Private recordings, models and local settings
+.env
+.env.*
+!.env.example
+config.yaml
+meetings/
+recordings/
+models/
+*.wav
+*.mp3
+*.mp4
+*.gguf
+*.ggml
+*.bin
+*.log
+# Native build products
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+*.exe
+*.dll
+*.pdb

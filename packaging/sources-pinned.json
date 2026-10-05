@@ -1,0 +1,54 @@
+[
+  {
+    "component": "jre",
+    "version": "21.0.12.1+1-LTS",
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_x64_windows_hotspot_21.0.12.1_1.zip",
+    "sha256": "d35f31e712f0fcf6ac5a093edc90204fbff22f720ba3950bd09d331d5e621636",
+    "license": "GPL-2.0-with-classpath-exception; runtime/legal"
+  },
+  {
+    "component": "whisper-model",
+    "version": "small-q5_1 multilingual",
+    "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+    "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/5359861c739e955e79d9a303bcbc70fb988958b1/ggml-small-q5_1.bin",
+    "sha256": "ae85e4a935d7a567bd102fe55afc16bb595bdb618e11b2fc7591bc08120411bb",
+    "license": "MIT"
+  },
+  {
+    "component": "whisper-cli",
+    "version": "1.7.6",
+    "url": "https://github.com/ggml-org/whisper.cpp/tree/a8d002cfd879315632a579e73f0148d06959de36",
+    "sha256": "bb67bf536ea8341da0821cdea12a5b87764895599aac16513d37f2e86ff25a4b",
+    "build": "llvm-mingw20260922, static CPU generic, AVX/AVX2/FMA/F16C/OpenMP/native off, force include algorithm/new for libc++23 header compatibility",
+    "license": "MIT"
+  },
+  {
+    "component": "llama-completion",
+    "version": "0.5.0",
+    "url": "https://github.com/ggml-org/llama.cpp/tree/7fe450e19305b828c199d602c23a8337aaa1f03b",
+    "sha256": "7766fa04d00fca6febf746b02d38c7fc15bbbef74ccb9aacfa18f654a0a727ef",
+    "build": "llvm-mingw20260922, static CPU baseline, AVX/AVX2/FMA/F16C/OpenMP/native/OpenSSL off, WINVER=0x0A00",
+    "license": "MIT"
+  },
+  {
+    "component": "capture",
+    "version": "0.9.0-beta.1",
+    "url": "local source capture-windows/",
+    "sha256": "7b993115eb8c298c0ef389b7d626dae83cc27dc60d1690e9e58cd47cf9e8cb95",
+    "build": "llvm-mingw20260922, static",
+    "license": "MeetScribe source license pending"
+  },
+  {
+    "component": "llvm-mingw build toolchain and runtime",
+    "version": "20260922",
+    "url": "https://github.com/mstorsjo/llvm-mingw/releases/tag/20260922",
+    "sha256": "52e5f5a7b131021d0c39a37a38fa380a1da7885cd04bd61afd0cd4ecfb8bc1f3",
+    "license": "Apache-2.0 WITH LLVM-exception; MinGW runtime notices"
+  },
+  {
+    "component": "JavaFX",
+    "version": "21.0.11",
+    "url": "https://repo.maven.apache.org/maven2/org/openjfx/",
+    "license": "GPL-2.0-with-classpath-exception; JavaFX notices"
+  }
+]

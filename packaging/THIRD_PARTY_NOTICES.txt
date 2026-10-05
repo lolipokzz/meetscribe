@@ -1,0 +1,24 @@
+Third-party components in MeetScribe Windows portable beta
+
+This notice identifies dependencies; actual upstream license texts are supplied
+under licenses/, runtime/legal/ and inside dependency JARs. sources.json records
+versions, source URLs and SHA256 hashes. No license is assigned here to MeetScribe
+itself: project owner license choice is still pending before public distribution.
+
+Eclipse Temurin OpenJDK JRE 21 — GPLv2 with Classpath Exception and bundled notices.
+The runtime/legal directory and runtime/NOTICE retain the upstream texts.
+OpenJFX 21 — GPLv2 with Classpath Exception; complete upstream license/legal files.
+Jackson 2.18.3 — Apache License 2.0; notices extracted from jars.
+SnakeYAML 2.3 — Apache License 2.0; upstream source header and full license included.
+JNA 5.16.0 — dual LGPL2.1/Apache2.0; bundled under Apache2.0 option, upstream texts.
+whisper.cpp 1.7.6 — MIT; upstream source and source license identified in manifest.
+Whisper multilingual small-q5_1 model — original OpenAI Whisper MIT license;
+quantized distribution from ggerganov/whisper.cpp Hugging Face repository.
+llama.cpp completion — MIT plus embedded third-party source notices.
+LLVM mingw runtime — Apache2.0 with LLVM exceptions and mingw-w64 runtime notices.
+Native CPU binaries were cross-compiled statically to avoid external MSVC runtime
+requirements. Windows system and Universal CRT DLLs are supplied by Windows 10/11.
+
+Build configuration and exact source revisions are recorded in sources.json and
+packaging/README.md. Source URLs enable obtaining corresponding upstream code.
+No model licenses authorize use of generated content beyond applicable law.

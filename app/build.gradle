@@ -1,0 +1,29 @@
+plugins { id 'application' }
+
+application { mainClass = 'io.meetscribe.app.Launcher' }
+
+def os = System.getProperty('os.name').toLowerCase()
+def arch = System.getProperty('os.arch').toLowerCase()
+def arm = arch in ['aarch64', 'arm64']
+def supportedArch = arm || arch in ['amd64', 'x86_64']
+if (!supportedArch || (os.contains('win') && arm)) {
+    throw new GradleException("Unsupported scaffold platform: ${os}/${arch}")
+}
+def platform = project.findProperty('javafxPlatform') ?: (os.contains('win') ? 'win' :
+    os.contains('mac') ? (arm ? 'mac-aarch64' : 'mac') :
+    os.contains('linux') ? (arm ? 'linux-aarch64' : 'linux') : null)
+if (platform == null) { throw new GradleException("Unsupported platform: ${os}") }
+
+dependencies {
+    implementation project(':core')
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3'
+    implementation 'net.java.dev.jna:jna-platform:5.16.0'
+    // Explicit host classifiers keep the development shell runnable on macOS/Linux.
+    ['base', 'graphics', 'controls'].each { module ->
+        implementation("org.openjfx:javafx-${module}:21.0.11:${platform}") { transitive = false }
+    }
+}
+
+tasks.named('processResources') {
+    from(rootProject.file('templates')) { into 'templates' }
+}

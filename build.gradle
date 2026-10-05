@@ -1,0 +1,27 @@
+plugins { id 'base' }
+
+allprojects {
+    group = 'io.meetscribe'
+    version = '0.9.0-beta.1'
+    repositories { mavenCentral() }
+}
+
+subprojects {
+    apply plugin: 'java-library'
+    java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.11.4'
+    }
+    tasks.withType(Test).configureEach { useJUnitPlatform() }
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        options.release = 21
+    }
+}
+
+wrapper {
+    gradleVersion = '9.4.1'
+    distributionType = Wrapper.DistributionType.BIN
+    distributionSha256Sum = '2ab2958f2a1e51120c326cad6f385153bb11ee93b3c216c5fccebfdfbb7ec6cb'
+}

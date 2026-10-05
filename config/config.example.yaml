@@ -1,0 +1,34 @@
+# MeetScribe 0.9.0-beta.1. Replace paths with your extracted portable directory.
+# Fresh portable startup supplies native/model defaults; saved config overrides them.
+schema-version: 1
+output-dir: 'C:\Users\YOUR_NAME\Documents\MeetScribe'
+language: auto # STT language; ru, en, auto
+ui:
+  language: ru # ru | en
+capture:
+  executable: 'C:\MeetScribe\native\capture\meetscribe-capture.exe'
+audio:
+  microphone: default
+  output-device: default
+  remind-before-recording: true
+transcription:
+  executable: 'C:\MeetScribe\native\whisper\whisper-cli.exe'
+  model: 'C:\MeetScribe\models\whisper.bin'
+  speaker-name: 'Я'
+  deduplicate: false
+summary:
+  mode: none # none | local | openai | anthropic | google | openrouter | ollama | custom | openai-compatible
+  executable: 'C:\MeetScribe\native\llama\llama-completion.exe'
+  local-model: '' # User-supplied GGUF: LLM weights are not bundled
+  base-url: 'https://api.openai.com/v1'
+  model: '' # API model ID or provider/model
+  api-key: '{env:OPENAI_API_KEY}' # or {credential:provider}; no plaintext keys
+  context-size: 8192
+  language: auto # Independent of STT
+  template: '' # Default template; custom UTF-8 file with {{transcript}} / {{language}}
+privacy:
+  local-only: true # Blocks all HTTP, including loopback Ollama
+storage:
+  delete-audio-after-processing: false # After successful summary, or STT when summary mode is none
+hotkey:
+  enabled: true # Windows Ctrl+Alt+R
